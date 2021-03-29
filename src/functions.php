@@ -12,7 +12,8 @@ function musalie_register_menus() {
 		)
 	);
 }
- 
+add_action( 'init', 'musalie_register_menus' );
+
 /**
  * Add support for core custom logo.
  *
@@ -32,7 +33,5 @@ add_theme_support(
 
 // Add support for Block Styles.
 add_theme_support( 'wp-block-styles' );
-
-add_action( 'init', 'musalie_register_menus' );
 
 ?>
