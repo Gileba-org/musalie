@@ -1,0 +1,21 @@
+/*
+Theme Name: Musalie
+Theme URI: https://www.musalie.be/
+Author: Gileba
+Author URI: https://www.gileba.be/
+Description: Musalie is a theme specifically written for musalie.be
+Requires at least: 5.7
+Tested up to: 5.7
+Requires PHP: 7.4
+Version: 1.0.O-dev.1
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: musalie
+
+Musalie WordPress Theme, (C) 2021 Gileba
+Musalie is distributed under the terms of the GNU GPL.
+*/
+
+body {
+	font-size: 16px;
+}
