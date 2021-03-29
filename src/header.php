@@ -4,7 +4,7 @@
 	</head>
 	
 	<body>
-		<div id="musalie-header">
+		<div id="musalie-header" class="site-header">
 		<?php
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
 			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -17,4 +17,4 @@
 		?>
 			<nav><?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?></nav>
 		</div>
-		<div id="musalie-container">
+		<div id="musalie-container" class="site-container">
