@@ -409,3 +409,11 @@ li.wpmenucartli a.wpmenucart-contents span.cartcontents {
 .schema-faq-section {
 	margin-bottom: 50px;
 }
+
+/**
+  *  Footer
+ **/
+.footer {
+	font-size: small;
+	text-align: center;
+}

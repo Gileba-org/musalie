@@ -16,6 +16,20 @@ function musalie_register_menus() {
 }
 add_action( 'init', 'musalie_register_menus' );
 
+// Register footer
+function musalie_footer() {
+
+	$args = array(
+		'id'            => 'footer',
+		'name'          => 'Footer',
+		'before_widget' => '',
+		'after_wiget'   => '',
+	);
+	register_sidebar( $args );
+
+}
+add_action( 'widgets_init', 'musalie_footer' );
+
 /**
  * Add support for core custom logo.
  *
@@ -39,22 +53,22 @@ add_theme_support( 'wp-block-styles' );
 // Change shipping cost label
 add_filter( 'woocommerce_cart_shipping_method_full_label', 'change_shipping_label', 10, 2 );
 
-function change_shipping_label ( $label, $method ) { 
-	if ( $method->cost > 0 ) { 
-		if ( WC()->cart->get_tax_price_display_mode()  == 'excl' ) { 
-			$label = wc_price( $method->cost ) . ' <span class="shipping-method">(' . $method->label . ')</span>'; 
-			if ( $method->get_shipping_tax() > 0 && WC()->cart->prices_include_tax ) { 
-				$label .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>'; 
+function change_shipping_label ( $label, $method ) {
+	if ( $method->cost > 0 ) {
+		if ( WC()->cart->get_tax_price_display_mode()  == 'excl' ) {
+			$label = wc_price( $method->cost ) . ' <span class="shipping-method">(' . $method->label . ')</span>';
+			if ( $method->get_shipping_tax() > 0 && WC()->cart->prices_include_tax ) {
+				$label .= ' <small class="tax_label">' . WC()->countries->ex_tax_or_vat() . '</small>';
 			}
-		} else { 
-			$label = wc_price( $method->cost + $method->get_shipping_tax() ) . ' <span class="shipping-method">(' . $method->label . ')</span>'; 
-			if ( $method->get_shipping_tax() > 0 && ! WC()->cart->prices_include_tax ) { 
-				$label .= ' <small class="tax_label">' . WC()->countries->inc_tax_or_vat() . '</small>'; 
-			} 
-		} 
+		} else {
+			$label = wc_price( $method->cost + $method->get_shipping_tax() ) . ' <span class="shipping-method">(' . $method->label . ')</span>';
+			if ( $method->get_shipping_tax() > 0 && ! WC()->cart->prices_include_tax ) {
+				$label .= ' <small class="tax_label">' . WC()->countries->inc_tax_or_vat() . '</small>';
+			}
+		}
 	}
-	 
-	return $label; 
+
+	return $label;
 }
 
 add_filter( 'woocommerce_gateway_icon', 'custom_payment_gateway_icons', 10, 2 );
