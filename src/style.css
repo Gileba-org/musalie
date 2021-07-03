@@ -199,7 +199,7 @@ a.small {
 .hamburger.is-active .hamburger-box .hamburger-inner,
 .hamburger.is-active .hamburger-box .hamburger-inner:after,
 .hamburger.is-active .hamburger-box .hamburger-inner:before {
-	background-color: var(--woocommerce);
+	background-color: var(--color-text);
 }
 
 .offcanvas {
