@@ -275,6 +275,10 @@ li.wpmenucartli a.wpmenucart-contents span.cartcontents {
 	display: none;
 }
 
+.woocommerce-Tabs-panel--description h2 {
+	display: none;
+}
+
 .woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,
@@ -400,8 +404,30 @@ li.wpmenucartli a.wpmenucart-contents span.cartcontents {
 	display: none;
 }
 
-.woocommerce-tabs {
-	display: none;
+.woocommerce-product-gallery__trigger {
+	display: none; /* Remove magnifying glass from photo */
+}
+
+.woocommerce-product-gallery__image .zoomImg {
+	visibility: hidden;
+}
+
+.woocommerce-product-gallery__image .wp-post-image {
+	cursor: default;
+}
+
+.woocommerce .single-product .product .entry-summary {
+	float: none;
+	width: auto;
+}
+
+.woocommerce .single-product .product .woocommerce-product-gallery {
+	margin: 0 2em 2em;
+}
+
+.woocommerce button.button.single_add_to_cart_button {
+	font-size: larger;
+	width: 100%;
 }
 
 /**
