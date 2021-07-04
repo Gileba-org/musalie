@@ -220,7 +220,7 @@ a.small {
 }
 
 .offcanvas nav ul li a {
-	color: var(--woocommerce);
+	color: var(--color-text);
 }
 
 @media screen and (max-width: 800px) {
