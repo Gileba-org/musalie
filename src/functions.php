@@ -88,4 +88,20 @@ function custom_payment_gateway_icons( $icon, $gateway_id ){
 	return $icon;
 }
 
+add_action( 'woocommerce_checkout_update_order_meta', 'algemene_voorwaarden_opslaan' );
+
+function algemene_voorwaarden_opslaan( $order_id ) {
+	if ( $_POST['terms'] ) update_post_meta( $order_id, 'terms', esc_attr( $_POST['terms'] ) );
+}
+
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'toon_bevestiging_algemene_voorwaarden' );
+
+function toon_bevestiging_algemene_voorwaarden( $order ) {
+	if ( get_post_meta( $order->get_id(), 'terms', true ) == 'on' ) {
+		echo '<p><strong>Algemene voorwaarden: </strong>Geaccepteerd</p>';
+	}
+	else
+		echo '<p><strong>Algemene voorwaarden: </strong>Geen bevestiging</p>';
+}
+
 ?>

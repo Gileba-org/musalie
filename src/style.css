@@ -17,7 +17,6 @@ Musalie is distributed under the terms of the GNU GPL.
 */
 
 @import url("https://fast.fonts.net/t/1.css?apiType=css&projectid=b591aff2-4bf9-49d7-b3db-e183bf96f302");
-@import url("assets/css/musalie-icons.css");
 @font-face {
 	font-family: "Script MT W00 Bold";
 	font-display: swap;
@@ -180,12 +179,26 @@ a.small {
 }
 
 @media screen and (max-width: 860px) {
+	.site-header {
+		padding: 0 40px 20px;
+	}
+
 	.site-header nav {
 		display: none;
 	}
 
 	.site-header .hamburger {
 		display: inline-block;
+	}
+
+	.site-container {
+		margin: 0;
+		padding: 20px 50px;
+	}
+
+	.post .woocommerce div.product div.images {
+		width: 100%;
+		float: none;
 	}
 }
 
@@ -269,6 +282,10 @@ li.wpmenucartli a.wpmenucart-contents span.cartcontents {
 
 .woocommerce .summary .product_meta {
 	display: none;
+}
+
+.woocommerce .woocommerce-tabs {
+	display: block;
 }
 
 .woocommerce .woocommerce-tabs > * {
@@ -444,8 +461,15 @@ footer {
 	font-size: small;
 	text-align: center;
 	clear: both;
+	padding: 10px 20px 20px;
 }
 
-.icon-facebook::before {
-	text-decoration: none;
+/* Social links */
+.heateor_sss_sharing_container {
+	bottom: 0;
+	top: initial !important;
+}
+
+.heateor_sss_sharing_container.heateor_sss_vertical_sharing {
+	padding: 0;
 }
