@@ -4,10 +4,10 @@ Theme URI: https://www.musalie.be/
 Author: Gileba
 Author URI: https://www.gileba.be/
 Description: Musalie is a theme specifically written for musalie.be
-Requires at least: 5.7
-Tested up to: 5.7.2
+Requires at least: 5.8
+Tested up to: 5.8.1
 Requires PHP: 7.4
-Version: 1.0.0-beta.2
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: musalie
@@ -176,6 +176,36 @@ a.small {
 	top: 40px;
 	right: 20px;
 	display: none;
+}
+
+.wp-block-columns {
+	display: flex;
+}
+
+.ontrafeld {
+	flex-wrap: wrap;
+}
+
+.ontrafeld .wp-block-column {
+	min-width: 200px;
+	max-width: 33%;
+}
+
+.ontrafeld .wp-block-column img {
+	width: 100%;
+}
+
+.ontrafeld-brief .wp-block-column {
+	max-width: 20%;
+}
+
+.ontrafeld-brief .wp-block-column img {
+	width: 100%;
+}
+
+form#loginform {
+	width: 50%;
+	min-width: 400px;
 }
 
 @media screen and (max-width: 860px) {
@@ -472,4 +502,72 @@ footer {
 
 .heateor_sss_sharing_container.heateor_sss_vertical_sharing {
 	padding: 0;
+}
+
+/**
+  *  Wordpress standards
+ **/
+.aligncenter,
+.has-text-align-center {
+	text-align: center;
+}
+
+/**
+  *  Post Slider
+ **/
+a.psac-link-overlay {
+	height: 0;
+	width: 0;
+}
+
+div.psac-post-image-bg {
+	background-color: inherit;
+}
+
+.psac-post-slider.psac-design-1 div.psac-post-overlay {
+	border: 3px solid #000;
+}
+
+.quotes .psac-post-title {
+	display: none;
+}
+
+.quotes .psac-post-short-content {
+	font-style: italic;
+}
+
+.quotes .psac-slider-and-carousel .owl-dots .owl-dot {
+	margin: 0 4px;
+}
+/*
+ ** Contact Form 7
+ */
+.wpcf7-checkbox .wpcf7-list-item {
+	width: 100%;
+}
+
+.survey label {
+	font-weight: bold;
+}
+
+.wpcf7-list-item-label {
+	font-weight: normal;
+}
+
+.cf7mls-btns .cf7mls_next.action-button,
+.cf7mls-btns .cf7mls_back.action-button {
+	font-size: inherit;
+	margin-right: 14px;
+}
+
+.wpcf7-form .fieldset-cf7mls-wrapper .cf7mls_current_fs {
+	width: unset;
+}
+
+.wpcf7-form .fieldset-cf7mls-wrapper .cf7mls_current_fs p {
+	margin-right: 20px;
+}
+
+.wpcf7-form .fieldset-cf7mls-wrapper .cf7mls_current_fs textarea {
+	width: 99%;
 }
