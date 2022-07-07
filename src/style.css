@@ -1,0 +1,610 @@
+/*
+Theme Name: Musalie
+Theme URI: https://www.musalie.be/
+Author: Gileba
+Author URI: https://www.gileba.be/
+Description: Musalie is a theme specifically written for musalie.be
+Requires at least: 5.8
+Tested up to: 5.8.1
+Requires PHP: 7.4
+Version: 1.0.3
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: musalie
+
+Musalie WordPress Theme, (C) 2021 Gileba
+Musalie is distributed under the terms of the GNU GPL.
+*/
+
+@import url("https://fast.fonts.net/t/1.css?apiType=css&projectid=b591aff2-4bf9-49d7-b3db-e183bf96f302");
+@font-face {
+	font-family: "Script MT W00 Bold";
+	font-display: swap;
+	src: url("assets/webfonts/5ed6b81b-3dec-4d9e-b712-ff2e2aa6bdf1.woff2") format("woff2"),
+		url("assets/webfonts/3f6976f7-9e0f-45b9-9edb-847b09a60831.woff") format("woff");
+}
+
+:root {
+	font-size: 16px;
+	--woocommerce: #2b7595;
+	--woocommerce-primary: #4689a6;
+	--color-background: #edbb3d;
+	--color-text: #28303d;
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: content-box;
+}
+
+@media screen {
+	html.musalie {
+		margin-top: 0 !important;
+	}
+}
+
+body {
+	margin: 0 0 -20px 0; /* FIX: should be just 0 */
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+		sans-serif;
+	color: var(--color-text);
+	line-height: 1.8em;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--color-background);
+}
+
+a,
+a:visited {
+	color: var(--color-text);
+	text-decoration: none;
+}
+
+a,
+a:hover {
+	border-bottom: 1px var(--color-text) dotted;
+}
+
+input,
+textarea,
+select {
+	line-height: 1.8em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+		sans-serif;
+	font-size: 1em;
+	margin-left: 20px;
+	border: 0;
+	width: 100%;
+	padding: 0 10px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	width: 20px;
+}
+
+mark.count {
+	background-color: inherit;
+}
+
+p:empty {
+	display: none;
+}
+
+h2 {
+	margin-top: 2em;
+}
+
+li.current-menu-item a {
+	border-bottom: 1px var(--color-text) solid;
+}
+
+.small {
+	font-size: 0.7em;
+}
+
+a.small {
+	border-bottom: 1px dotted var(--color-text);
+}
+
+.full-width img {
+	width: 100%;
+}
+
+.site-header {
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 100px 20px 80px;
+}
+
+.site-logo img {
+	padding-top: 20px;
+	max-height: 120px;
+}
+
+.site-header nav ul {
+	display: flex;
+	justify-items: flex-end;
+	list-style: none;
+}
+
+.site-header nav ul li {
+	padding-left: 20px;
+	text-transform: capitalize;
+}
+
+.site-header nav ul li a {
+	color: var(--woocommerce);
+	font-weight: 700;
+	border-bottom: none;
+}
+
+.site-header nav ul li.current-menu-item a {
+	border-bottom: 1px var(--woocommerce) solid;
+}
+
+.site-header nav ul li a:hover {
+	border-bottom: 1px var(--woocommerce) dotted;
+}
+
+.site-container {
+	margin: 0;
+	padding: 20px 100px;
+}
+
+.post-title {
+	float: right;
+	width: fit-content;
+	border-bottom: 2px solid var(--color-text);
+	padding: 0 0 25px 100px;
+	font-family: "Script MT W00 Bold";
+}
+
+.site-container .post {
+	max-width: 800px;
+	margin: auto;
+	padding-top: 150px;
+}
+
+.wp-block-image img {
+	height: auto;
+}
+
+.wp-block-image figure.alignright {
+	margin-left: 1.5em;
+	float: right;
+}
+
+.site-header .hamburger {
+	position: absolute;
+	top: 40px;
+	right: 20px;
+	display: none;
+}
+
+.wp-block-columns {
+	display: flex;
+}
+
+.post .ontrafeld {
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.ontrafeld .wp-block-column {
+	min-width: 200px;
+	max-width: 30%;
+}
+
+.ontrafeld .wp-block-column img {
+	width: 100%;
+}
+
+.ontrafeld-brief .wp-block-column {
+	max-width: 20%;
+}
+
+.ontrafeld-brief .wp-block-column img {
+	width: 100%;
+}
+
+form#loginform {
+	width: 50%;
+	min-width: 400px;
+}
+
+@media screen and (max-width: 860px) {
+	.site-header {
+		padding: 0 40px 20px;
+	}
+
+	.site-header nav {
+		display: none;
+	}
+
+	.site-header .hamburger {
+		display: inline-block;
+	}
+
+	.site-container {
+		margin: 0;
+		padding: 20px 50px;
+	}
+
+	.post .woocommerce div.product div.images {
+		width: 100%;
+		float: none;
+	}
+}
+
+.musalie-container {
+	height: 100%;
+}
+
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner:after,
+.hamburger .hamburger-inner:before,
+.hamburger.is-active .hamburger-box .hamburger-inner,
+.hamburger.is-active .hamburger-box .hamburger-inner:after,
+.hamburger.is-active .hamburger-box .hamburger-inner:before {
+	background-color: var(--color-text);
+}
+
+.offcanvas {
+	float: right;
+	background-color: white;
+	opacity: 0.75;
+	padding: 50px 40px 0 0;
+	height: 100%;
+	display: none;
+}
+
+.offcanvas.is-active {
+	display: block;
+}
+
+.offcanvas nav ul {
+	list-style: none;
+}
+
+.offcanvas nav ul li a {
+	color: var(--color-text);
+}
+
+@media screen and (max-width: 800px) {
+	.wp-block-image.responsive img {
+		max-width: 150px;
+	}
+}
+
+.wp-block-column h3 {
+	margin-block-start: 0;
+}
+
+/**
+  * Support for WP Menu Cart
+ **/
+li.wpmenucartli a:hover {
+	border: none;
+}
+
+li.wpmenucartli a.wpmenucart-contents span.cartcontents {
+	display: none !important;
+}
+
+.site-header nav ul li.wpmenucartli a {
+	padding-left: 0;
+}
+
+.site-header nav ul li.wpmenucartli {
+	padding-left: 20px;
+}
+
+/**
+  * Support for WooCommerce
+ **/
+.woo-price-exclude {
+	font-size: 0.7em;
+}
+
+.summary .price {
+	margin-block-start: 0;
+}
+
+.summary .price .amount {
+	font-weight: 700;
+}
+
+.woocommerce div.product div.images {
+	width: 40%;
+}
+
+.woocommerce .summary .product_meta {
+	display: none;
+}
+
+.woocommerce .woocommerce-tabs {
+	display: block;
+}
+
+.woocommerce .woocommerce-tabs > * {
+	display: none;
+}
+
+.woocommerce-Tabs-panel--description h2 {
+	display: none;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	font-size: 0.8em;
+}
+
+.woocommerce .button.button.alt,
+.woocommerce ul.products li.product .button,
+.woocommerce .cart .button,
+.woocommerce .cart input.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+	background: var(--woocommerce-primary);
+	color: white;
+}
+
+.woocommerce .button.button.alt:hover,
+.woocommerce ul.products li.product .button:hover,
+.woocommerce .cart .button:hover,
+.woocommerce .cart input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+	background: var(--woocommerce);
+	color: white;
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+	color: var(--woocommerce);
+}
+
+.woocommerce div.product p.price ins {
+	color: red;
+}
+
+.woocommerce a.remove,
+.woocommerce a.remove:hover {
+	width: 1.2em;
+	height: 1.2em;
+}
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+	float: none;
+	width: 100%;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+	line-height: inherit;
+	margin: 0 0 0 20px;
+}
+
+.select2-container .select2-selection--single {
+	margin: 0 0 0 20px;
+}
+
+.woocommerce form .form-row select {
+	margin: 0 0 0 20px;
+}
+
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+	background-color: var(--color-background);
+}
+
+#add_payment_method #payment ul.payment_methods li img,
+.woocommerce-cart #payment ul.payment_methods li img,
+.woocommerce-checkout #payment ul.payment_methods li img {
+	margin: 4px 0.5em 0 0;
+}
+
+#add_payment_method #payment ul.payment_methods li input,
+.woocommerce-cart #payment ul.payment_methods li input,
+.woocommerce-checkout #payment ul.payment_methods li input {
+	margin: 0 0 0 0.5em;
+}
+
+@media screen {
+	label .mollie-gateway-icon {
+		float: left;
+	}
+}
+
+.woocommerce ul#shipping_method span:not(.amount) {
+	font-weight: normal;
+}
+
+.woocommerce-privacy-policy-text {
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
+	.woocommerce div.product div.images {
+		margin: 0 auto 2em;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.no-mobile {
+		display: none;
+	}
+}
+
+.woocommerce table.cart td.actions .input-text {
+	width: 120px;
+}
+
+.woocommerce table.cart td.actions .coupon .input-text {
+	margin-top: 0;
+}
+
+.woocommerce table.cart td.actions .coupon button {
+	top: -2px;
+}
+
+.woocommerce .wc-bacs-bank-details .bank_name,
+.woocommerce .wc-bacs-bank-details .account_number {
+	display: none;
+}
+
+.woocommerce-product-gallery__trigger {
+	display: none; /* Remove magnifying glass from photo */
+}
+
+.woocommerce-product-gallery__image .zoomImg {
+	visibility: hidden;
+}
+
+.woocommerce-product-gallery__image .wp-post-image {
+	cursor: default;
+}
+
+.woocommerce .single-product .product .entry-summary {
+	float: none;
+	width: auto;
+}
+
+.woocommerce .single-product .product .woocommerce-product-gallery {
+	margin: 0 2em 2em;
+}
+
+.woocommerce button.button.single_add_to_cart_button {
+	font-size: larger;
+	width: 100%;
+}
+
+/* Sale */
+.woocommerce span.onsale {
+	line-height: 2em;
+	padding: 1.2em;
+	font-size: 1em;
+	top: -3em;
+	left: -3em;
+}
+
+.woocommerce span.onsale span.enddate {
+	font-size: 0.7em;
+}
+
+/* Sale: Black Friday */
+.woocommerce span.onsale {
+	background-color: black;
+}
+
+/**
+  *  Yoast
+ **/
+.schema-faq-section {
+	margin-bottom: 50px;
+}
+
+/**
+  *  Footer
+ **/
+footer {
+	font-size: small;
+	text-align: center;
+	clear: both;
+	padding: 10px 20px 20px;
+}
+
+/* Social links */
+.heateor_sss_sharing_container {
+	bottom: 0;
+	top: initial !important;
+}
+
+.heateor_sss_sharing_container.heateor_sss_vertical_sharing {
+	padding: 0;
+}
+
+/**
+  *  Wordpress standards
+ **/
+.aligncenter,
+.has-text-align-center {
+	text-align: center;
+}
+
+.is-vertically-aligned-center {
+	align-self: center;
+}
+
+/**
+  *  Post Slider
+ **/
+a.psac-link-overlay {
+	height: 0;
+	width: 0;
+}
+
+div.psac-post-image-bg {
+	background-color: inherit;
+}
+
+.psac-post-slider.psac-design-1 div.psac-post-overlay {
+	border: 3px solid #000;
+}
+
+.quotes .psac-post-title {
+	display: none;
+}
+
+.quotes .psac-post-short-content {
+	font-style: italic;
+}
+
+.quotes .psac-slider-and-carousel .owl-dots .owl-dot {
+	margin: 0 4px;
+}
+
+/*
+ ** Contact Form 7
+ */
+.wpcf7-checkbox .wpcf7-list-item {
+	width: 100%;
+}
+
+.survey label {
+	font-weight: bold;
+}
+
+.wpcf7-list-item-label {
+	font-weight: normal;
+}
+
+.cf7mls-btns .cf7mls_next.action-button,
+.cf7mls-btns .cf7mls_back.action-button {
+	font-size: inherit;
+	margin-right: 14px;
+}
+
+.wpcf7-form .fieldset-cf7mls-wrapper .cf7mls_current_fs {
+	width: unset;
+}
+
+.wpcf7-form .fieldset-cf7mls-wrapper .cf7mls_current_fs p {
+	margin-right: 20px;
+}
+
+.wpcf7-form .fieldset-cf7mls-wrapper .cf7mls_current_fs textarea {
+	width: 99%;
+}
