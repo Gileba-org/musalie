@@ -120,4 +120,11 @@ function toon_bevestiging_algemene_voorwaarden($order)
 
 /* Disable WordPress Admin Bar for all users */
 add_filter("show_admin_bar", "__return_false");
+
+/* WooCommerce: Change sale text */
+add_filter("woocommerce_sale_flash", "woocommerce_custom_sale_text", 10, 3);
+function woocommerce_custom_sale_text($text, $post, $_product)
+{
+	return '<span class="onsale">Black Friday-actie<br /><span class="enddate">t/m 28 november</span></span>';
+}
 ?>
