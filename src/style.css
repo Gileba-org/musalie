@@ -7,7 +7,7 @@ Description: Musalie is a theme specifically written for musalie.be
 Requires at least: 5.8
 Tested up to: 5.8.1
 Requires PHP: 7.4
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: musalie
@@ -187,13 +187,14 @@ a.small {
 	display: flex;
 }
 
-.ontrafeld {
+.post .ontrafeld {
 	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .ontrafeld .wp-block-column {
 	min-width: 200px;
-	max-width: 33%;
+	max-width: 30%;
 }
 
 .ontrafeld .wp-block-column img {
